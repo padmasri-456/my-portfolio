@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio • Padmasri Tammana</title>
+  <meta name="description" content="Simple, responsive portfolio website for a fresher / web developer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f172a;              /* slate-900 */
+      --card:#111827;            /* gray-900 */
+      --muted:#94a3b8;           /* slate-400 */
+      --text:#e5e7eb;            /* gray-200 */
+      --brand:#60a5fa;           /* blue-400 */
+      --ring:#1d4ed8;            /* blue-700 */
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(96,165,250,.15), transparent 60%),
+                  radial-gradient(800px 400px at -10% 10%, rgba(99,102,241,.12), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1080px;margin:0 auto;padding:24px}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background: linear-gradient(180deg, rgba(15,23,42,.9), rgba(15,23,42,.75) 60%, rgba(15,23,42,0));backdrop-filter: blur(8px)}
+    .nav{display:flex;align-items:center;justify-content:space-around;gap:40px}
+    .logo{display:flex;align-items:center;gap:12px;font-weight:700}
+    .logo .avatar{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#60a5fa,#a78bfa);color:white;font-weight:700}
+    .nav a.link{opacity:.9}
+    .nav a.link:hover{opacity:1}
+    .nav .actions{display:flex;gap:10px;align-items:center}
+    .btn{padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.1);background:#0b1222}
+    .btn.primary{background: linear-gradient(135deg, #60a5fa, #818cf8); border:none; color:#0b1222; font-weight:700}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding-top:40px}
+    .headline{font-size:clamp(28px,4.5vw,44px);line-height:1.1;margin:10px 0 12px}
+    .sub{color:var(--muted);max-width:60ch}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.12);color:#c7d2fe;background:rgba(99,102,241,.12)}
+    .hero-card{border-radius:var(--radius); background:linear-gradient(180deg, rgba(17,24,39,.6), rgba(17,24,39,.3)); padding:18px; box-shadow:var(--shadow); border:1px solid rgba(255,255,255,.06)}
+    .grid{display:grid;gap:16px}
+
+    /* Sections */
+    section{margin-top:42px}
+    h2{font-size:clamp(20px,3vw,28px);margin:0 0 14px}
+    .card{background:linear-gradient(180deg, rgba(17,24,39,.65), rgba(17,24,39,.35));border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{padding:8px 12px;border-radius:999px;background:rgba(148,163,184,.12);border:1px solid rgba(148,163,184,.25);font-weight:600}
+
+    .projects{display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:16px}
+    .project h3{margin:0 0 6px}
+    .project p{margin:0 0 10px;color:var(--muted)}
+    .project .meta{font-size:14px;opacity:.85}
+
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+    footer{margin:48px 0 24px;color:var(--muted);text-align:center}
+    .contact .card p a{
+        color: blue !important;
+        text-decoration: underline !important;
+    }
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr}
+      .two-col{grid-template-columns:1fr}
+    }
+    .linkedin-link {
+  color: #0a66c2; /* LinkedIn blue */
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.linkedin-link:hover {
+  color: #004182; /* darker blue on hover */
+}
+
+    /* Tiny fade-in */    [].show{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <div class="avatar" aria-hidden="true">PT</div>
+        <span>PADMASRI TAMMANA</span>
+      </div>
+      <nav class="actions">
+        <a class="link" href="#about">About</a>
+        <a class="link" href="#skills">Skills</a>
+        <a class="link" href="#projects">Projects</a>
+        <a class="link" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <span class="pill">Open to Opportunities</span>
+        <h1 class="headline">Frontend Web Developer • Quick Learner</h1>
+        <p class="sub">A dedicated and quick-learning individual, eager to begin a professional career in a reputable organization. I aim to contribute my skills, embrace challenges, and grow alongside the company.</p>
+        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a href="Padmasri_Tammana_Resume2.pdf" download class="btn">Download Resume</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="grid">
+          <div class="card" style="padding:14px">
+            <strong>Current focus</strong>
+            <div class="skills" style="margin-top:8px">
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+              <span class="chip">Bootstrap</span>
+              <span class="chip">Responsive Design</span>
+              
+              <span class="chip">Python</span>
+            </div>
+          </div>
+          <div class="two-col">
+            <div class="card project">
+              <h3 style="margin-bottom:4px">Bone Fracture Detection</h3>
+              <p>Academic project integrating ML/DL to detect fractures with a simple, responsive results UI.</p>
+              <div class="meta">Role: Team Lead • Python, CNN/SVM • 2024</div>
+            </div>
+            <div class="card project">
+              <h3 style="margin-bottom:4px">Vivan Angels – Clone</h3>
+              <p>Built a clean, responsive clone website focused on layout, accessibility, and usability.</p>
+              <div class="meta">Role: Developer • HTML, CSS, JS, Bootstrap • 2025</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2>About</h2>
+      <div class="card">
+        <p style="margin:0">B.Tech graduate in Computer Science with a foundation in software and web development. I enjoy building user-friendly, mobile-first interfaces and learning by doing projects. I work well in teams, communicate clearly, and adapt quickly to new tools.</p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="card skills">
+        <span class="chip">HTML</span>
+        <span class="chip">CSS</span>
+        <span class="chip">Bootstrap</span>
+        <span class="chip">Responsive Design</span>
+        <span class="chip">JavaScript (Basics)</span>
+        <span class="chip">Python</span>
+        <span class="chip">Teamwork</span>
+        <span class="chip">Communication</span>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <article class="card project">
+          <h3>Integration of ML & DL for Bone Fracture Detection</h3>
+          <p>Developed an AI-based diagnostic system using Python with ML/DL methods and a responsive web interface for results.</p>
+          <ul style="margin:0 0 8px 18px">
+            <li>Led a small team; focused on data prep, training, and evaluation.</li>
+            <li>Designed a simple, mobile-friendly UI.</li>
+          </ul>
+          <div class="meta">Academic • Team Lead</div>
+        </article>
+        <article class="card project">
+          <h3>Vivan Angels Clone Website</h3>
+          <p>Created a responsive clone site closely matching the original design and flow, focusing on clean layout and usability.</p>
+          <ul style="margin:0 0 8px 18px">
+            <li>Implemented core pages and navigation.</li>
+            <li>Improved accessibility and mobile responsiveness.</li>
+          </ul>
+          <div class="meta">Practice • Developer</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Activities / Extras -->
+    <section id="activities">
+      <h2>Activities</h2>
+      <div class="card">
+        <ul style="margin:0 0 0 18px">
+          <li>Participated as a <strong>presenter</strong> in a felicitation program at the training center; managed introductions and coordination.</li>
+          <li>Took part in college cultural/technical events and group presentations.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="two-col">
+        <div class="card">
+          <p style="margin:.2rem 0"><strong>Email:</strong>padmasritammana715@gmail.com</p>
+          <p style="margin:.2rem 0"><strong>Phone:</strong> +91-7075685688</p>
+          <p style="margin:.2rem 0"><strong>Location:</strong>Chemudulanka, Rajahmundry,A.P - 533234</p>
+        </div>
+        <div class="card">
+          <p style="margin:.2rem 0"><a href="https://www.linkedin.com/in/padmasritammana" target="_blank" class="linkedin-link">
+  LinkedIn profile
+</a></p>
+          <p style="margin:.2rem 0">I’m open to internships and full-time roles. Feel free to reach out!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© Padmasri Tammana</div>
+  </footer></body>
+</html>
